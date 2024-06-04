@@ -15,7 +15,7 @@ const UserDetails = () => {
         const response = await axios.get(`https://sd-movie-app.vercel.app/api/user/${id}`);
         setUser(response.data.user);
       } catch (err) {
-        console.error('Error fetching user details:', err); // Log the error details
+        console.error('Error fetching user details:', err); 
         setError(err.response?.data?.message || err.message);
       } finally {
         setLoading(false);
