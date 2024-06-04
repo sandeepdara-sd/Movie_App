@@ -10,7 +10,7 @@ const Playlist = () => {
     const [error, setError] = useState(null);
     const user = useSelector((state) => state.auth.user);
     const navigate = useNavigate();
-
+    axios.defaults.withCredentials = true
     useEffect(() => {
         const fetchPlaylist = async () => {
             if (!user || !user._id) {
