@@ -9,7 +9,12 @@ import movieRouter from "./routes/movie-routes.js";
 
 const app = express();
 const PORT = 5000;
-app.use(cors())
+app.use(cors({
+    origin:["https://sd-movies.vercel.app/"],
+    methods:["POST","GET","PUT","DELETE"],
+    credentials:true
+}))
+
 app.use(express.json())
 app.use("/api/user/",router);
 app.use("/api/movies/", movieRouter);
