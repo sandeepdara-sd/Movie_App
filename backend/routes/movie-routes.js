@@ -1,11 +1,11 @@
 import express from "express";
 import { searchMovies, addMovieToPlaylist, removeMovieFromPlaylist, getUserPlaylist } from "../controllers/movie-controller.js";
 
-const blogRouter = express.Router();
+const movieRouter = express.Router();
 
-blogRouter.get("/search", searchMovies);
-blogRouter.post("/add", addMovieToPlaylist);
-blogRouter.delete("/remove", removeMovieFromPlaylist);
-blogRouter.get("/playlist/:userId", getUserPlaylist);
+movieRouter.get("/search", searchMovies);
+movieRouter.post("/add", addMovieToPlaylist);
+movieRouter.delete("/remove", removeMovieFromPlaylist);
+movieRouter.get("/playlist/:userId", getUserPlaylist);
 
-export default blogRouter;
+export default movieRouter;
