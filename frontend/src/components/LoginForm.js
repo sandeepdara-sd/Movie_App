@@ -8,6 +8,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  axios.defaults.withCredentials = true
   const [input, setInput] = useState({
     email: "",
     password: ""
