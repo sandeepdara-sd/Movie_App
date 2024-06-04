@@ -16,7 +16,7 @@ const SignupForm = () => {
   });
 
   const sendRequest = async () => {
-    const res = await axios.post("http://localhost:5000/api/user/signup", {
+    const res = await axios.post("https://sd-movie-app.vercel.app/api/user/signup", {
       name: input.name,
       email: input.email,
       password: input.password
