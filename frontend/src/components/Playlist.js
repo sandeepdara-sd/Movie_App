@@ -19,7 +19,7 @@ const Playlist = () => {
             }
             
             try {
-                const response = await axios.get(`http://localhost:5000/api/movies/playlist/${user._id}`);
+                const response = await axios.get(`https://sd-movie-app.vercel.app/api/movies/playlist/${user._id}`);
                 setPlaylist(response.data.playlist);
             } catch (error) {
                 setError(error);
@@ -35,7 +35,7 @@ const Playlist = () => {
         if (!user || !user._id) return;
 
         try {
-            await axios.delete('http://localhost:5000/api/movies/remove', {
+            await axios.delete('https://sd-movie-app.vercel.app/api/movies/remove', {
                 data: { userId: user._id, movieId }
             });
             setPlaylist((prevPlaylist) => prevPlaylist.filter((movie) => movie._id !== movieId));
