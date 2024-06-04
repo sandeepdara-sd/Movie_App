@@ -17,7 +17,7 @@ const MovieDetails = () => {
   const user = useSelector((state) => state.auth.user);
   const [isInPlaylist, setIsInPlaylist] = useState(false);
   const [movieIdInPlaylist, setMovieIdInPlaylist] = useState(null);
-
+  axios.defaults.withCredentials = true
   const userId = user ? user._id : localStorage.getItem('userId');
 
   useEffect(() => {
