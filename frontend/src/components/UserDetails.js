@@ -12,7 +12,7 @@ const UserDetails = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/user/${id}`);
+        const response = await axios.get(`https://sd-movie-app.vercel.app/api/user/${id}`);
         setUser(response.data.user);
       } catch (err) {
         console.error('Error fetching user details:', err); // Log the error details
