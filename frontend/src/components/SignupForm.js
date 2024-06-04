@@ -14,7 +14,7 @@ const SignupForm = () => {
     email: "",
     password: ""
   });
-
+axios.defaults.withCredentials = true
   const sendRequest = async () => {
     const res = await axios.post("https://sd-movie-app.vercel.app/api/user/signup", {
       name: input.name,
