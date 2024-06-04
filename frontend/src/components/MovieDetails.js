@@ -28,7 +28,7 @@ const MovieDetails = () => {
         setMovie(fetchedMovie);
 
         if (isAuthenticated && userId) {
-          const playlistResponse = await axios.get(`http://localhost:5000/api/movies/playlist/${userId}`);
+          const playlistResponse = await axios.get(`https://sd-movie-app.vercel.app/api/movies/playlist/${userId}`);
           const playlistMovies = playlistResponse.data.playlist;
           const movieInPlaylist = playlistMovies.find(playlistMovie => playlistMovie.imdbID === fetchedMovie.imdbID);
           if (movieInPlaylist) {
@@ -55,7 +55,7 @@ const MovieDetails = () => {
 
   const handleAddToPlaylist = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/movies/add', {
+      const response = await axios.post('https://sd-movie-app.vercel.app/api/movies/add', {
         title: movie.Title,
         userId: userId,
         imdbID: movie.imdbID
@@ -71,7 +71,7 @@ const MovieDetails = () => {
 
   const handleRemoveFromPlaylist = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/movies/remove/${movieIdInPlaylist}`);
+      await axios.delete(`https://sd-movie-app.vercel.app/api/movies/remove/${movieIdInPlaylist}`);
       setIsInPlaylist(false);
       setMovieIdInPlaylist(null);
       alert('Movie removed from playlist');
