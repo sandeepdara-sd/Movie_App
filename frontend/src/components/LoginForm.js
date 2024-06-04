@@ -21,7 +21,7 @@ const LoginForm = () => {
   };
 
   const sendRequest = async (type = "login") => {
-    const res = await axios.post(`http://localhost:5000/api/user/${type}`, {
+    const res = await axios.post(`https://sd-movie-app.vercel.app/api/user/${type}`, {
       email: input.email,
       password: input.password
     }).catch(err => console.log(err));
