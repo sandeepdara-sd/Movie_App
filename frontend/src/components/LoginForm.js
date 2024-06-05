@@ -20,7 +20,7 @@ const LoginForm = () => {
       [e.target.name]: e.target.value
     }));
   };
-
+  axios.defaults.withCredentials = true
   const sendRequest = async (type = "login") => {
     const res = await axios.post(`https://sd-movie-app.vercel.app/api/user/${type}`, {
       email: input.email,
