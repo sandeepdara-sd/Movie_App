@@ -11,7 +11,7 @@ const app = express();
 const PORT = 5000;
 app.use(cors({
     origin:["https://sd-movies.vercel.app"],
-    methods:["POST","GET","PUT","DELETE"],
+    methods:["POST","GET"],
     credentials:true
 }))
 app.use("/",(req,res)=>{
