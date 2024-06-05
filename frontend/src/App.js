@@ -15,7 +15,7 @@ import axios from 'axios'
 const App = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-  axios.defaults.withCredentials = true
+  
   useEffect(() => {
     if (localStorage.getItem("userId")) {
       dispatch(login());
