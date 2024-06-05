@@ -14,6 +14,9 @@ app.use(cors({
     methods:["POST","GET","PUT","DELETE"],
     credentials:true
 }))
+app.use("/",(req,res)=>{
+    res.send("Hello")
+})
 
 app.use(express.json())
 app.use("/api/user/",router);
